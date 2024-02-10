@@ -1,6 +1,6 @@
+import { Favorite } from "@components";
+import { contact } from "@data";
 import { Form } from "react-router-dom";
-import { Favorite } from "../components";
-import { contact } from "../components/data";
 
 export const Contact = function () {
   return (
