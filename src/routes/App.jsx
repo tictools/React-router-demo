@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-export const Root = function () {
+export const App = function () {
   return (
     <>
       <div id="sidebar">
