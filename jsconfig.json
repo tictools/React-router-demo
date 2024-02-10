@@ -6,6 +6,7 @@
       "@api/*": ["src/api/*"],
       "@components/*": ["src/components/*"],
       "@data/*": ["src/data/*"],
+      "@loaders/*": ["src/loaders/*"],
       "@routes/*": ["src/routes/*"]
     }
   },
