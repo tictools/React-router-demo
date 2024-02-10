@@ -1,6 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 export const App = function () {
+  const { contacts } = useLoaderData();
+  console.log("🚀 ~ App ~ contacts:", contacts);
+
   return (
     <>
       <div id="sidebar">
@@ -22,14 +25,20 @@ export const App = function () {
           </form>
         </div>
         <nav>
-          <ul>
-            <li>
-              <a href={`/contacts/1`}>Your Name</a>
-            </li>
-            <li>
-              <a href={`/contacts/2`}>Your Friend</a>
-            </li>
-          </ul>
+          {contacts.length ? (
+            <ul>
+              <li>
+                <Link to={`/contacts/1`}>Your Name</Link>
+              </li>
+              <li>
+                <Link to={`/contacts/2`}>Your Friend</Link>
+              </li>
+            </ul>
+          ) : (
+            <p>
+              <i>No contacts</i>
+            </p>
+          )}
         </nav>
       </div>
       <div id="detail">
