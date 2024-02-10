@@ -10,6 +10,8 @@ export default defineConfig({
       "@api": "/src/api",
       "@components": "/src/components",
       "@data": "/src/data",
+      "@hooks": "/src/hooks",
+      "@loaders": "/src/loaders",
       "@routes": "/src/routes",
     },
   },
