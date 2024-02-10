@@ -1,0 +1,1 @@
+export { useContactsDataLoader } from "./useContactsLoaderData";

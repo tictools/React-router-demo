@@ -1,8 +1,8 @@
-import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { useContactsDataLoader } from "@src/hooks";
+import { Link, Outlet } from "react-router-dom";
 
 export const App = function () {
-  const { contacts } = useLoaderData();
-  console.log("🚀 ~ App ~ contacts:", contacts);
+  const { contacts, hasContacts } = useContactsDataLoader();
 
   return (
     <>
@@ -25,7 +25,7 @@ export const App = function () {
           </form>
         </div>
         <nav>
-          {contacts.length ? (
+          {hasContacts ? (
             <ul>
               <li>
                 <Link to={`/contacts/1`}>Your Name</Link>
