@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 
-export const useContactsDataLoader = function () {
+export const useContactsLoaderData = function () {
   const { contacts } = useLoaderData();
 
   return {

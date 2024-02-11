@@ -1,2 +1,2 @@
-export { useContactDataLoader } from "./useContactLoaderData";
-export { useContactsDataLoader } from "./useContactsLoaderData";
+export { useContactLoaderData } from "./useContactLoaderData";
+export { useContactsLoaderData } from "./useContactsLoaderData";

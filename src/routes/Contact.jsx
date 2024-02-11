@@ -1,9 +1,9 @@
 import { Favorite } from "@components";
-import { useContactDataLoader } from "@src/hooks";
+import { useContactLoaderData } from "@src/hooks";
 import { Form } from "react-router-dom";
 
 export const Contact = function () {
-  const { contact } = useContactDataLoader();
+  const { contact } = useContactLoaderData();
   return (
     <div id="contact">
       <div>
