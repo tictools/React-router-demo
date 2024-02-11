@@ -1,14 +1,13 @@
 export const ContactLinkName = function ({ contact }) {
+  const name = [contact.first, contact.last].filter((item) => !!item).join(" ");
+
+  const hasName = () => name.length !== 0;
+
+  const linkLabel = hasName() ? <>{name}</> : <i>No Name</i>;
+
   return (
     <>
-      {contact.first || contact.last ? (
-        <>
-          {contact.first} {contact.last}
-        </>
-      ) : (
-        <i>No Name</i>
-      )}{" "}
-      {contact.favorite && <span>★</span>}
+      {linkLabel} {contact.favorite && <span>★</span>}
     </>
   );
 };
