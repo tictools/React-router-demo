@@ -1,3 +1,5 @@
+import { Form } from "react-router-dom";
+
 export const ContactForm = function () {
   return (
     <div>
@@ -12,9 +14,9 @@ export const ContactForm = function () {
         <div id="search-spinner" aria-hidden hidden={true} />
         <div className="sr-only" aria-live="polite"></div>
       </form>
-      <form method="post">
+      <Form method="post">
         <button type="submit">New</button>
-      </form>
+      </Form>
     </div>
   );
 };
