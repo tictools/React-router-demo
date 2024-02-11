@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 
 import { ContactForm, ContactList, EmptyContactList } from "@src/components";
-import { useContactsDataLoader } from "@src/hooks";
+import { useContactsLoaderData } from "@src/hooks";
 
 export const App = function () {
-  const { contacts, hasContacts } = useContactsDataLoader();
+  const { contacts, hasContacts } = useContactsLoaderData();
 
   return (
     <>
