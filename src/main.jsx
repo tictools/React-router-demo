@@ -8,6 +8,7 @@ import { loaders } from "@loaders";
 import { App, Contact } from "@routes";
 
 import "./index.css";
+import { EditContact } from "./routes";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
       {
         path: "contacts/:contactId",
         element: <Contact />,
+        loader: loaders.contactLoader,
+      },
+      {
+        path: "contacts/:contactId/edit",
+        element: <EditContact />,
         loader: loaders.contactLoader,
       },
     ],
