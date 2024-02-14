@@ -3,7 +3,6 @@ import { Form } from "react-router-dom";
 
 export const EditContact = function () {
   const { contact } = useContactLoaderData();
-  console.log("🚀 ~ EditContact ~ contact:", contact);
 
   return (
     <Form method="post" id="contact-form">
