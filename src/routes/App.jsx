@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
 
 import { ContactForm, ContactList, EmptyContactList } from "@src/components";
-import { useContactsLoaderData } from "@src/hooks";
+import { useContactsLoaderData, useOutletNavigation } from "@src/hooks";
 
 export const App = function () {
   const { contacts, hasContacts } = useContactsLoaderData();
+
+  const { isLoading } = useOutletNavigation();
 
   return (
     <>
@@ -19,7 +21,7 @@ export const App = function () {
           )}
         </nav>
       </div>
-      <div id="detail">
+      <div id="detail" className={isLoading ? "loading" : ""}>
         <Outlet />
       </div>
     </>
