@@ -1,8 +1,15 @@
-import { useContactLoaderData } from "@src/hooks";
+import { useContactLoaderData, useNavigateTo } from "@src/hooks";
 import { Form } from "react-router-dom";
 
 export const EditContact = function () {
+  const PREV_HISTORY_ENTRY = -1;
+
   const { contact } = useContactLoaderData();
+  const { navigateTo } = useNavigateTo();
+
+  const handlePrevNavigation = () => {
+    navigateTo(PREV_HISTORY_ENTRY);
+  };
 
   return (
     <Form method="post" id="contact-form">
@@ -48,7 +55,9 @@ export const EditContact = function () {
       </label>
       <p>
         <button type="submit">Save</button>
-        <button type="button">Cancel</button>
+        <button type="button" onClick={handlePrevNavigation}>
+          Cancel
+        </button>
       </p>
     </Form>
   );

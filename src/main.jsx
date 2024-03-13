@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { actions } from "@actions";
 import { ErrorPage } from "@components";
 import { loaders } from "@loaders";
-import { App, Contact } from "@routes";
+import { App, Contact, IndexRoute } from "@routes";
 
 import "./index.css";
 import { EditContact } from "./routes";
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
     loader: loaders.contactsLoader,
     action: actions.createContact,
     children: [
+      {
+        index: true,
+        element: <IndexRoute />,
+      },
       {
         path: "contacts/:contactId",
         element: <Contact />,
