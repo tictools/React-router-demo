@@ -3,7 +3,7 @@ import { Form } from "react-router-dom";
 export const ContactForm = function () {
   return (
     <div>
-      <form id="search-form" role="search">
+      <Form id="search-form" role="search">
         <input
           id="q"
           aria-label="Search contacts"
@@ -13,7 +13,7 @@ export const ContactForm = function () {
         />
         <div id="search-spinner" aria-hidden hidden={true} />
         <div className="sr-only" aria-live="polite"></div>
-      </form>
+      </Form>
       <Form method="post">
         <button type="submit">New</button>
       </Form>
