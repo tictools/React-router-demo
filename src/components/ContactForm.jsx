@@ -13,7 +13,10 @@ export const ContactForm = function () {
   const { inputRef } = useUpdateRefValueBy({ query });
 
   const handleSubmit = (event) => {
-    submit(event.currentTarget.form);
+    const isFirstSearch = query === null;
+    submit(event.currentTarget.form, {
+      replace: !isFirstSearch,
+    });
   };
 
   return (
@@ -22,13 +25,13 @@ export const ContactForm = function () {
         <input
           ref={inputRef}
           className={isSearching ? "loading" : ""}
-          id="q"
-          aria-label="Search contacts"
-          placeholder="Search"
           type="search"
+          id="q"
           name="q"
+          placeholder="Search"
           defaultValue={query}
           onChange={handleSubmit}
+          aria-label="Search contacts"
         />
         <div id="search-spinner" aria-hidden hidden={!isSearching} />
         <div className="sr-only" aria-live="polite"></div>
