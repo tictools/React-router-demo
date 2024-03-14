@@ -1,9 +1,12 @@
-import { Form } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
 
 export const Favorite = function ({ contact }) {
+  const fetcher = useFetcher();
+
   let favorite = contact.favorite;
+
   return (
-    <Form method="post">
+    <fetcher.Form method="post">
       <button
         name="favorite"
         value={favorite ? "false" : "true"}
@@ -11,6 +14,6 @@ export const Favorite = function ({ contact }) {
       >
         {favorite ? "★" : "☆"}
       </button>
-    </Form>
+    </fetcher.Form>
   );
 };
