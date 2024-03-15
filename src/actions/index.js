@@ -1,9 +1,11 @@
 import { createContactAction } from "./createContact";
 import { deleteContactAction } from "./destroyContact";
 import { updateContactAction } from "./editContact";
+import { highlightContactAction } from "./highlightContact";
 
 export const actions = {
   createContact: createContactAction,
-  updateContact: updateContactAction,
   deleteContact: deleteContactAction,
+  highlightContact: highlightContactAction,
+  updateContact: updateContactAction,
 };
