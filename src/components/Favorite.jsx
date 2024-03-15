@@ -10,7 +10,7 @@ export const Favorite = function ({ contact }) {
   }
 
   return (
-    <fetcher.Form method="post">
+    <fetcher.Form className="favorite-form" method="post">
       <button
         name="favorite"
         value={isFavorite ? "false" : "true"}

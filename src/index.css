@@ -72,11 +72,20 @@ button:active {
   font-weight: 400;
   padding: 0;
 }
-#contact h1 form button[value="true"] {
+
+#contact .favorite-form button {
+  padding: 0;
+  box-shadow: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  border-radius: 50%;
+}
+
+#contact .favorite-form button[value="true"] {
   color: #a4a4a4;
 }
-#contact h1 form button[value="true"]:hover,
-#contact h1 form button[value="false"] {
+#contact .favorite-form button[value="true"]:hover,
+#contact .favorite-form button[value="false"] {
   color: #eeb004;
 }
 
@@ -239,9 +248,12 @@ i {
 }
 
 #detail {
-  flex: 1;
-  padding: 2rem 4rem;
   width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem 4rem;
 }
 
 #detail.loading {
@@ -250,9 +262,93 @@ i {
   transition-delay: 200ms;
 }
 
+#contact-list {
+  width: 36rem;
+}
+
+#contact-list h1 {
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+#contact-list .contact-list__grid {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+  list-style-type: none;
+
+  > li > a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #bbb;
+    border-radius: 0.25rem;
+
+    .contact-list__img {
+      position: relative;
+
+      > span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 1px solid #bbb;
+        border-radius: 50%;
+        color: #eeb004;
+      }
+
+      > img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  > li > a:hover {
+    color: #3992ff;
+  }
+}
+
 #contact {
+  margin-top: 1rem;
   max-width: 40rem;
+  width: 32rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#contact .contact__info {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.5), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+#contact .contact__info > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #contact h1 {
@@ -276,10 +372,14 @@ i {
 }
 
 #contact a[href*="twitter"] {
+  width: 10rem;
   display: flex;
-  font-size: 1.5rem;
-  color: #3992ff;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
   text-decoration: none;
+  border-top: 1px solid #bbb;
+  color: #3992ff;
 }
 #contact a[href*="twitter"]:hover {
   text-decoration: underline;
@@ -289,7 +389,6 @@ i {
   width: 8rem;
   height: 8rem;
   background: #c8c8c8;
-  margin-right: 2rem;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 0.5rem #888;
@@ -298,7 +397,24 @@ i {
 #contact h1 ~ div {
   display: flex;
   gap: 0.5rem;
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
+}
+
+#contact:is(:last-child) > a {
+  width: 8.5rem;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5;
+  color: #3992ff;
+  background-color: white;
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+  border: none;
+  border-radius: 8px;
 }
 
 #contact-form {
