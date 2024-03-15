@@ -3,16 +3,20 @@ import { useFetcher } from "react-router-dom";
 export const Favorite = function ({ contact }) {
   const fetcher = useFetcher();
 
-  let favorite = contact.favorite;
+  let isFavorite = contact.favorite;
+
+  if (fetcher?.formData) {
+    isFavorite = fetcher.formData.get("favorite") === "true";
+  }
 
   return (
     <fetcher.Form method="post">
       <button
         name="favorite"
-        value={favorite ? "false" : "true"}
-        aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
+        value={isFavorite ? "false" : "true"}
+        aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
       >
-        {favorite ? "★" : "☆"}
+        {isFavorite ? "★" : "☆"}
       </button>
     </fetcher.Form>
   );
